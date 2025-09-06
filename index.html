@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale = 1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="https://kit.fontawesome.com/19e3dbf869.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Undergraduate Student</p>
+            <h1>Lucy Zheng</h1>
+        </div>
+    </div>
+</div>
+<!-- ---------------about---------------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am a junior at New York University majoring in Computer Engineering with a minor in Game Engineering.
+                I have an interest in Game Development, Computer Architecture, and Embedded Systems, and I enjoy
+                learning how hardware and software interact to create real-time applications.</p>
+
+                <div class="about-tab-titles">
+                    <p class="about-tab-links active-link" onclick="opentab('education')">Education</p>
+                    <p class="about-tab-links" onclick="opentab('skills')">Skills</p>
+                </div>
+                <div class="about-tab-contents active-tab" id="education">
+                    <ul>
+                        <li><span>2023 - Current<br>NYU Tandon School of Engineering</span><br>B.S. Computer Engineering<br>Minor in Game Engineering</li>
+                    </ul>
+                </div>
+                <div class="about-tab-contents" id="skills">
+                    <ul>
+                        <li><span>Game Development</span><br>Designing 2D Games</li>
+                        <li><span>UI/UX</span><br>Designing Web Interfaces</li>
+                        <li><span>Coding Languages</span><br>C/C++<br>Python<br>HTML/CSS<br>Verilog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ---------------projects---------------- -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="projects-list">
+            <a href="projects.html">
+                <div class="project-item">
+                    <div class="row">
+                        <div class="project-item-description">
+                            <h2>Reflexion</h2>
+                            <p>A 2D top-down puzzle game built in C++ and OpenGL, featuring three levels that increase in difficulty.</p>
+                        </div>
+                        <div class="project-item-icon">
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- ---------------contacts---------------- -->
+<div id="contacts">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/lucy-zheng-93b03a294?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Br8LVnooXSOiz0sA60SOFZQ%3D%3D">
+                        <i class="fa-brands fa-square-linkedin"></i></a>
+                    <a href="https://github.com/Tyjihn?tab=repositories"><i class="fa-brands fa-square-github"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    var tablinks = document.getElementsByClassName("about-tab-links");
+    var tabcontents = document.getElementsByClassName("about-tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx_bdZaO-vc_kQMn3_IfYrVuxYT3S98rizmXZ6LGSImaQGb9sFns6vmELcM0vCPrEaN-Q/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){ msg.innerHTML = "" }, 5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+</body>
+</html>

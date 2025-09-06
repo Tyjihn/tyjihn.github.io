@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale = 1.0">
+    <title>Reflexion - Top-Down Puzzle Game</title>
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="https://kit.fontawesome.com/19e3dbf869.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <ul id="sidemenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contacts">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </nav>
+</div>
+<!-- ---------------reflexion---------------- -->
+<div id="reflexion">
+    <div class="container">
+        <h1 class="project-header">Reflexion</h1>
+        <div class="row">
+            <div class="project-col-1">
+                <p>A 2D top-down game where the player must navigate their clone through increasingly difficult levels 
+                to reach the exit. Each level introduces new obstacles and game mechanics that test the player's
+                logic, reflex, and spactial awareness.</p>
+            </div>
+            <div class="project-col-2">
+                <img src="image/reflexion.gif">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="project-info-list">
+            <div class="row">
+                <div class="project-info-col-1">
+                    <h2><span>Features</span></h2>
+                    <ul>
+                        <li>Clone-based movement system with collision detection</li>
+                        <li>3 original levels with increasing difficulty</li>
+                        <li>Background music and sound effects implemented using SDL_mixer</li>
+                        <li>Shader-based visual effects with transitions and lighting</li>
+                    </ul>
+                </div>
+                <div class="project-info-col-2">
+                    <h2><span>Tech Stack</span></h2>
+                    <ul>
+                        <li><span>C++</span>: core game logic and architecture</li>
+                        <li><span>OpenGL</span>: rendering spritesheets and tilesets</li>
+                        <li><span>SDL2/SDL_mixer</span>: window management, input handling, audio playback</li>
+                        <li>Custom game loop and level loading from array-based map definitions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="demo-video">
+                <div class="demo-video-wrapper">
+                    <video width="800" height="480" controls>
+                        <source src="assets/reflexion_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="demo-video-title">Reflexion Walkthrough - Level 1</div>
+                </div>
+            </div>
+            .
+        </div>
+    </div>
+</div>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>
