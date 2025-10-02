@@ -251,14 +251,20 @@ form .btn{
 }
 
 .project-col-1{
-    flex-basis: 55%;
+    flex-basis: 50%;
+    padding-right: 25px;
+    align-items: center;
 }
 .project-col-2{
-    flex-basis: 40%;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 35px;
 }
 .project-col-2 img{
-    width: 100%;
-    border-radius: 15px;
+    width: 70%;
+    border-radius: 5px;
 }
 
 .project-info-list{
@@ -297,6 +303,7 @@ form .btn{
 .demo-video{
     display: flex;
     justify-content: center;
+    width: 100%;
     margin-top: 10px;
 }
 .demo-video-wrapper{
