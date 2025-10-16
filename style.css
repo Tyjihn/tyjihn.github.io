@@ -246,11 +246,14 @@ form .btn{
 }
 .project-header{
     padding: 30px 0;
-    font-size: 50px;
     color: #ff004f;
+    font-size: 50px;
 }
-
+.project-header p{
+    font-size: 40px;
+}
 .project-col-1{
+    font-size: 18px;
     flex-basis: 50%;
     padding-right: 25px;
     align-items: center;
@@ -265,6 +268,33 @@ form .btn{
 .project-col-2 img{
     width: 70%;
     border-radius: 5px;
+}
+.project-github-link{
+    margin-top: 30px;
+}
+.project-github-link a{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #262626;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #868686;
+    transition: background 0.2s, transform 0.12s;
+}
+.project-github-link a:hover{
+    background: #ff004f;
+    border: none;
+    color: #fff;
+    transform: translateY(-2px);
+}
+.project-github-link a{
+    font-size: 15px;
+}
+.project-github-link a .fa-brands{
+    font-size: 24px;
 }
 
 .project-info-list{
@@ -403,6 +433,9 @@ nav .fa-solid{
         display: block;
         width: 100%;
         box-sizing: border-box;
+    }
+    .project-github-link{
+        margin-top: 14px; /* less vertical space on small screens */
     }
     .project-info-list h2{
         margin-left: -20px;
