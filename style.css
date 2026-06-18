@@ -10,6 +10,7 @@ html{
 body{
     background-color: #080808;
     color: #fff;
+    overflow-x: hidden;
 }
 #header{
     width: 100%;
@@ -81,6 +82,19 @@ nav ul li a:hover::after{
 .about-col-1 img{
     width: 100%;
     border-radius: 15px;
+}
+.avatar-placeholder{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff004f, #b54769);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    font-weight: 600;
+    color: #fff;
+    user-select: none;
 }
 .about-col-2{
     flex-basis: 60%;
@@ -317,7 +331,7 @@ form .btn{
 .project-info-list ul li{
     list-style: none;
     font-size: 16px;
-    white-space: pre;
+    white-space: normal;
 }
 .project-info-list h2 span{
     color: #ff004f;
@@ -446,13 +460,13 @@ nav .fa-solid{
         margin-top: 14px;
     }
     .project-info-list h2{
-        margin-left: -20px;
+        margin-left: 0;
         font-size: 25px;
     }
     .project-info-list ul li{
         text-wrap: wrap;
         display: flex;
-        margin-left: -20px;
+        margin-left: 0;
     }
     .project-info-list .row{
         gap: 20px;
