@@ -288,6 +288,9 @@ form .btn{
 }
 .project-github-link{
     margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 .project-github-link a{
     display: inline-flex;
@@ -312,6 +315,11 @@ form .btn{
 }
 .project-github-link a .fa-brands{
     font-size: 24px;
+}
+.project-github-link a.play-link{
+    background: #ff004f;
+    border: 1px solid #ff004f;
+    transition: none;
 }
 
 .project-info-list{
